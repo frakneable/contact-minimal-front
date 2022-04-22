@@ -10,7 +10,7 @@ function Contacts() {
     const [ contacts, setContacts ] = useState([])
 
     useEffect(() => {
-        axios.get(`https://localhost:7298/person/${id}`)
+        axios.get(`https://minimalcontactmanager.azurewebsites.net/person/${id}`)
         .then((response) => {
             setContacts(response.data.contacts)
         })
@@ -20,7 +20,7 @@ function Contacts() {
     }, [id])
 
     function deleteContact(id) {
-        axios.delete(`https://localhost:7298/contact/${id}`)
+        axios.delete(`https://minimalcontactmanager.azurewebsites.net/contact/${id}`)
 
         setContacts(contacts.filter(contact => contact.id !== id))
     }

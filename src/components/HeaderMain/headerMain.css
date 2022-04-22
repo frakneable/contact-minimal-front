@@ -1,5 +1,5 @@
 header {
-    background-color: #2F3644;
+    background-color: var(--dark-indigo);
 }
 
 .container {

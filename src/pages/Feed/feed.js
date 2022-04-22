@@ -10,7 +10,7 @@ function Feed() {
     const [ people, setPeople ] = useState([])
 
     useEffect(() => {
-        axios.get('https://localhost:7298/people')
+        axios.get(`https://minimalcontactmanager.azurewebsites.net/people`)
         .then((response) => {
             setPeople(response.data)
         })
@@ -20,7 +20,7 @@ function Feed() {
     }, [])
 
     function deletePerson(id) {
-        axios.delete(`https://localhost:7298/person/${id}`)
+        axios.delete(`https://minimalcontactmanager.azurewebsites.net/person/${id}`)
 
         setPeople(people.filter(person => person.id !== id))
     }

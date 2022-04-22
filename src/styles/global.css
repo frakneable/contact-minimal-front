@@ -1,3 +1,8 @@
+:root {
+    --dark-indigo: #2F3644;
+    --bg-dark-indigo: #242732;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,5 +11,5 @@
 
 body {
     height: 100vh;
-    background-color: #242732;
+    background-color: var(--bg-dark-indigo);
 }

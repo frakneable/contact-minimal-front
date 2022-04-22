@@ -1,13 +1,11 @@
 main {
     display: flex;
     justify-content: center;
-
-
     padding: 3rem 0;
 }
 
 .card-contact {
-    background-color: #2F3644;
+    background-color: var(--dark-indigo);
     padding: 30px 70px;
     border-radius: 15px;
 }
@@ -16,9 +14,7 @@ main {
     font-family: Heebo;
     font-weight: 800;
     text-align: center;
-
     color: #D2DAF5;
-
     font-size: 3rem;
     margin-bottom: 5px;
 }
@@ -41,9 +37,7 @@ label {
     display: block;
     margin-bottom: 7px;
     font-size: 1.2rem;
-
     color: #D2DAF5;
-
     font-family: Poppins;
 }
 

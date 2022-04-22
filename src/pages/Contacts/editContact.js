@@ -3,7 +3,7 @@ import Header from '../../components/Header/Header'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useNavigate, useParams } from 'react-router-dom'
-import axios from 'axios'
+import api from '../../api/index'
 import * as yup from 'yup'
 import './contact.css'
 
@@ -15,7 +15,7 @@ const validateContact = yup.object({
 function putContact(data, id, navigate){
     console.log(data)
     const request = { type: parseInt(data.type), value: data.value }
-    axios.put(`https://localhost:7298/contact/${id}`, request).then(() => {
+    api.put(`/contact/${id}`, request).then(() => {
         navigate('/', { replace: true })
     })
     .catch((e) => {
@@ -36,7 +36,7 @@ function EditContact() {
     const addContact = data => putContact(data, id, navigate)
 
     useEffect(() => {
-        axios.get(`https://localhost:7298/contact/${id}`)
+        api.get(`/contact/${id}`)
         .then((response) => {
             reset(response.data)
         })

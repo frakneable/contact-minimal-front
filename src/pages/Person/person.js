@@ -4,16 +4,16 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useNavigate  } from 'react-router-dom'
 import * as yup from 'yup'
-import axios from 'axios'
+import api from '../../api/index';
 import './person.css'
 
 const validatePerson = yup.object({
     name: yup.string().required("Name is required")
-})
+});
 
 function postPerson(data, navigate){
     const request = { name: data.name, contacts: [{ type: data.contactType, value: data.contactValue }] }
-    axios.post('https://localhost:7298/person', request).then(() => {
+    api.post(`/person`, request).then(() => {
         navigate('/', { replace: true })
     })
     .catch((e) => {

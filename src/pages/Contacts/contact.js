@@ -14,7 +14,7 @@ const validateContact = yup.object({
 
 function postContact(data, id, navigate){
     const request = { type: parseInt(data.type), value: data.value }
-    axios.post(`https://localhost:7298/person/${id}/contact`, request).then(() => {
+    axios.post(`https://minimalcontactmanager.azurewebsites.net/person/${id}/contact`, request).then(() => {
         navigate('/', { replace: true })
     })
     .catch((e) => {

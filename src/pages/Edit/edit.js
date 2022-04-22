@@ -12,7 +12,7 @@ const validatePerson = yup.object({
 
 function putPerson(data, id, navigate){
     const request = { name: data.name, contacts: [{ type: data.contactType, value: data.contactValue }] }
-    axios.put(`https://localhost:7298/person/${id}`, request).then(() => {
+    axios.put(`https://minimalcontactmanager.azurewebsites.net/person/${id}`, request).then(() => {
         navigate('/', { replace: true })
     })
     .catch((e) => {
@@ -31,7 +31,7 @@ function Edit() {
     const addPerson = data => putPerson(data, id, navigate)
 
     useEffect(() => {
-        axios.get(`https://localhost:7298/person/${id}`)
+        axios.get(`https://minimalcontactmanager.azurewebsites.net/person/${id}`)
         .then((response) => {
             reset(response.data)
         })

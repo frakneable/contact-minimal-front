@@ -32,7 +32,7 @@ main .cards{
 main .cards .card {
     margin: 0 auto;
 
-    background-color: #2F3644;
+    background-color: var(--dark-indigo);
 
     padding: 30px 40px;
     width: 600px;

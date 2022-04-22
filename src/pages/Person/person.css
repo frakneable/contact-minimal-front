@@ -7,13 +7,13 @@ main {
 }
 
 .card-person {
-    background-color: #2F3644;
+    background-color: var(--dark-indigo);
     padding: 30px 70px;
     border-radius: 15px;
 }
 
 .card-person h1{
-    font-family: Heebo;
+    font-family: Heebo, sans-serif;
     font-weight: 800;
     text-align: center;
 

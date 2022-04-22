@@ -7,9 +7,11 @@ function HeaderMain(props) {
     return (
         <header>
             <div className='container'>
-                <div className='logo'>
-                    <h1>Contact Manager</h1>
-                </div>
+                <Link to={`/`}>
+                    <div className='logo'>
+                        <h1>Contact Manager</h1>
+                    </div>
+                </Link>
                 <div className='btn-new'>
                     {props.type !== 'contact'
                     ? <Link to={`/${props.type}`}>
